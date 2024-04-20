@@ -125,18 +125,31 @@
         <div class="dropdown">
             <label for="list1">段位:</label>
             <select id="list1">
-                <option value="option1">玄人</option>
-                <option value="option2">名人</option>
-                <option value="option3">超人</option>
+                <option value="option01">初段</option>
+                <option value="option02">二段</option>
+                <option value="option03">三段</option>
+                <option value="option04">四段</option>
+                <option value="option05">五段</option>
+                <option value="option06">六段</option>
+                <option value="option07">七段</option>
+                <option value="option08">八段</option>
+                <option value="option09">九段</option>
+                <option value="option10">十段</option>
+                <option value="option11">玄人</option>
+                <option value="option12">名人</option>
+                <option value="option13">超人</option>
+                <option value="option14">達人</option>
             </select>
         </div>
 
         <div class="dropdown">
             <label for="list2">目標レベル:</label>
             <select id="list2">
-                <option value="option1">あっさり(半日程度)</option>
-                <option value="option2">こってり(一日程度)</option>
-                <option value="option3">超こってり(数日程度)</option>
+                <option value="option1">超あっさり(1時間程度)</option>
+                <option value="option2">あっさり(2,3時間程度)</option>
+                <option value="option3">ふつう(1日程度)</option>
+                <option value="option4">こってり(数日程度)</option>
+                <option value="option5">超こってり(数週間以上)</option>
             </select>
         </div>
 
@@ -170,18 +183,60 @@
                 "個人差S+": ["!!!カオスタイム!!!", "疾風怒濤(裏)", "双竜ノ乱", "!!!チルノのパーフェクトさんすうタイム!!!", "まださいたま2000"],
                 "SS": ["Infinite Rebellion", "彁(裏)", "The Future of the 太鼓ドラム(裏)", "神竜 ～Shinryu～(裏)", "Central Dogma Pt.1(裏)", "憎悪と醜悪の花束(裏)", "第六天魔王", "ダンガンノーツ(裏)", "Destination 2F29", "ドンカマ2000", "23時54分、陽の旅路へのプレリュード(裏)", "Vixtory(裏)", "poxei♦DOON", "幽玄ノ乱", "ラ・モレーナ・クモナイ(裏)"]
             };
+
+            let LevelRepo = [[47,45,43,40,37],[43,41,39,36,33],[39,37,35,32,29],[35,34,31,28,25],[31,30,27,24,21],[28,26,24,22,19],[25,23,21,18,16],[23,21,19,16,13],[21,19,17,14,11],[16,14,12,10,9],[14,12,10,8,6],[12,10,8,6,4],[10,8,6,4,3],[7,5,3,2,1]];
+
+
+
             var list1 = document.getElementById("list1");
             var selected1 = list1.options[list1.selectedIndex].text;
             var list2 = document.getElementById("list2");
             var selected2 = list2.options[list2.selectedIndex].text;
             var DaniNum = 0;
+            var TermNum = 0;
+            var LevelNum = 0;
             switch (selected1) {
-                case "玄人":
+                case "初段":
+                    DaniNum = 0; break;
+                case "二段":
                     DaniNum = 1; break;
-                case "名人":
+                case "三段":
                     DaniNum = 2; break;
-                case "超人":
+                case "四段":
                     DaniNum = 3; break;
+                case "五段":
+                    DaniNum = 4; break;
+                case "六段":
+                    DaniNum = 5; break;
+                case "七段":
+                    DaniNum = 6; break;
+                case "八段":
+                    DaniNum = 7; break;
+                case "九段":
+                    DaniNum = 8; break;
+                case "十段":
+                    DaniNum = 9; break;
+                case "玄人":
+                    DaniNum = 10; break;
+                case "名人":
+                    DaniNum = 11; break;
+                case "超人":
+                    DaniNum = 12; break;
+                case "達人":
+                    DaniNum = 13; break;
+            }
+
+            switch (selected2) {
+                case "超あっさり(1時間程度)":
+                    TermNum = 0; break;
+                case "あっさり(2,3時間程度)":
+                    TermNum = 1; break;
+                case "ふつう(1日程度)":
+                    TermNum = 2; break;
+                case "こってり(数日程度)":
+                    TermNum = 3; break;
+                case "超こってり(数週間以上)":
+                    TermNum = 4; break;
             }
 
 
@@ -190,8 +245,8 @@
 
             var displayArea = document.getElementById("displayArea");
 
-
-            var result = DaniNum + selected1;
+            LevelNum = LevelRepo[DaniNum][TermNum];
+            var result = LevelNum;
             document.getElementById("displayArea").innerText = result;
 
         });
