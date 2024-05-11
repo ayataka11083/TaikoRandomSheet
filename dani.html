@@ -286,7 +286,7 @@
             }, changeInterval);
         });
 
-        funcsion SetWord(input){
+        function SetWord(input){
             if (["F", "E", "D", "C", "B", "A", "S", "S+"].includes(a)) {
                 switch(input){
                     case "F": return word["地力F"];
@@ -296,7 +296,7 @@
                     case "B": return word["地力B"].concat(word["個人差B"]);
                     case "A": return word["地力A"].concat(word["個人差A"]);
                     case "S": return word["地力S"].concat(word["個人差S"]);
-                    case "S+": return word["個人差S+"];
+                    case "S+": return word["地力S"].concat(word["個人差S+"], word["個人差S"]);
                 }
             }
             else return word[input];
