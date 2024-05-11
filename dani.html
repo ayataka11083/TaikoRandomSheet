@@ -209,7 +209,7 @@
             var TotalNum = 0;
             var dani1 = "", dani2 = "", dani3 = "", dani12 = "", dani22 = "", dani32 = "";
             
-            var conditions = "可の数90未満 不可の数8未満";
+            var conditions = "";
             switch (selected) {
                 case "六段": DaniNum = 0; RandomNum = Math.floor(Math.random() * 1); break;
                 case "七段": DaniNum = 1; RandomNum = Math.floor(Math.random() * 1); break;
@@ -243,7 +243,6 @@
 
             var displayArea4 = document.getElementById("displayArea4");
             displayArea4.innerText = conditions;
-            console.log(TotalNum);
 
             var selectedWords1 = SetWord(dani1);
             var selectedWords2 = SetWord(dani2);
@@ -270,7 +269,7 @@
             var startTime = new Date().getTime();
 
             var interval = setInterval(function () {
-                if (new Date().getTime() - startTime > spinDuration && displayAria1.innerText == displayAria2.innerText && displayAria2.innerText == displayAria3.innerText && displayAria3.innerText == displayAria1.innerText) {
+                if (new Date().getTime() - startTime > spinDuration && displayArea1.innerText == displayArea2.innerText && displayArea2.innerText == displayArea3.innerText && displayArea3.innerText == displayArea1.innerText) {
                     clearInterval(interval);
                     displayArea1.classList.remove("spinning");
                     displayArea2.classList.remove("spinning");
@@ -287,19 +286,19 @@
         });
 
         function SetWord(input){
-            if (["F", "E", "D", "C", "B", "A", "S", "S+"].includes(a)) {
+            if (["F", "E", "D", "C", "B", "A", "S", "S+"].includes(input)) {
                 switch(input){
-                    case "F": return word["地力F"];
-                    case "E": return word["地力E"].concat(word["個人差E"]);
-                    case "D": return word["地力D"].concat(word["個人差D"]);
-                    case "C": return word["地力C"].concat(word["個人差C"]);
-                    case "B": return word["地力B"].concat(word["個人差B"]);
-                    case "A": return word["地力A"].concat(word["個人差A"]);
-                    case "S": return word["地力S"].concat(word["個人差S"]);
-                    case "S+": return word["地力S"].concat(word["個人差S+"], word["個人差S"]);
+                    case "F": return words["地力F"];
+                    case "E": return words["地力E"].concat(words["個人差E"]);
+                    case "D": return words["地力D"].concat(words["個人差D"]);
+                    case "C": return words["地力C"].concat(words["個人差C"]);
+                    case "B": return words["地力B"].concat(words["個人差B"]);
+                    case "A": return words["地力A"].concat(words["個人差A"]);
+                    case "S": return words["地力S"].concat(words["個人差S"]);
+                    case "S+": return words["地力S"].concat(words["個人差S+"], words["個人差S"]);
                 }
             }
-            else return word[input];
+            else return words[input];
         }
 
 
