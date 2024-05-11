@@ -207,13 +207,12 @@
             var DaniNum = 0;
             var RandomNum = 0;
             var TotalNum = 0;
-            var dani1 = "";
-            var dani2 = "";
-            var dani3 = "";
+            var dani1 = "", dani2 = "", dani3 = "", dani12 = "", dani22 = "", dani32 = "";
+            
             var conditions = "可の数90未満 不可の数8未満";
             switch (selected) {
-                case "六段": DaniNum = 0; RandomNum = Math.floor(Math.random() * 4); break;
-                case "七段": DaniNum = 1; RandomNum = Math.floor(Math.random() * 4); break;
+                case "六段": DaniNum = 0; RandomNum = Math.floor(Math.random() * 1); break;
+                case "七段": DaniNum = 1; RandomNum = Math.floor(Math.random() * 1); break;
                 case "八段": DaniNum = 2; RandomNum = Math.floor(Math.random() * 5); break;
                 case "九段": DaniNum = 3; RandomNum = Math.floor(Math.random() * 5); break;
                 case "十段": DaniNum = 4; RandomNum = Math.floor(Math.random() * 6); break;
@@ -225,7 +224,8 @@
             TotalNum = DaniNum * 10 + RandomNum;
 
             switch (TotalNum) {
-                case 0: dani1 = ""; dani2 = ""; dani3 = ""; conditions = ""; break;
+                case 0: dani1 = "個人差D"; dani2 = "個人差D"; dani3 = "個人差D"; conditions = "テスト"; break;
+                case 10: dani1 = "A"; dani2 = "A"; dani3 = "A"; conditions = "テスト2"; break;
             }
 
 
@@ -245,14 +245,18 @@
             displayArea4.innerText = conditions;
             console.log(TotalNum);
 
-            var selectedWords1 = words[dani1];
-            var selectedWords2 = words[dani2];
-            var selectedWords3 = words[dani3];
+            var selectedWords1 = SetWord(dani1);
+            var selectedWords2 = SetWord(dani2);
+            var selectedWords3 = SetWord(dani3);
+
+
 
             if (selectedWords1.length === 0 || selectedWords2.length === 0 || selectedWords3.length === 0) {
-                document.getElementById("displayArea1").innerText = "難易度を選択してください";
+                document.getElementById("displayArea1").innerText = "エラーです、、、";
                 return;
             }
+
+            
 
             var displayArea1 = document.getElementById("displayArea1");
             var displayArea2 = document.getElementById("displayArea2");
@@ -266,7 +270,7 @@
             var startTime = new Date().getTime();
 
             var interval = setInterval(function () {
-                if (new Date().getTime() - startTime > spinDuration) {
+                if (new Date().getTime() - startTime > spinDuration && displayAria1.innerText == displayAria2.innerText && displayAria2.innerText == displayAria3.innerText && displayAria3.innerText == displayAria1.innerText) {
                     clearInterval(interval);
                     displayArea1.classList.remove("spinning");
                     displayArea2.classList.remove("spinning");
@@ -281,6 +285,25 @@
                 }
             }, changeInterval);
         });
+
+        funcsion SetWord(input){
+            if (["F", "E", "D", "C", "B", "A", "S", "S+"].includes(a)) {
+                switch(input){
+                    case "F": return word["地力F"];
+                    case "E": return word["地力E"].concat(word["個人差E"]);
+                    case "D": return word["地力D"].concat(word["個人差D"]);
+                    case "C": return word["地力C"].concat(word["個人差C"]);
+                    case "B": return word["地力B"].concat(word["個人差B"]);
+                    case "A": return word["地力A"].concat(word["個人差A"]);
+                    case "S": return word["地力S"].concat(word["個人差S"]);
+                    case "S+": return word["個人差S+"];
+                }
+            }
+            else return word[input];
+        }
+
+
+
     </script>
 </body>
 </html>
