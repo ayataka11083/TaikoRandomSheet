@@ -242,8 +242,8 @@
 
 
 
-            var displayArea4 = document.getElementById("displayArea4");
-            displayArea4.innerText = conditions;
+            //var displayArea4 = document.getElementById("displayArea4");
+            //displayArea4.innerText = conditions;
 
             //var selectedWords1 = SetWord(dani1);
             //var selectedWords2 = SetWord(dani2);
@@ -273,7 +273,7 @@
             var startTime = new Date().getTime();
 
             var interval = setInterval(function () {
-                if (new Date().getTime() - startTime > spinDuration && displayArea1.innerText == displayArea2.innerText && displayArea2.innerText == displayArea3.innerText && displayArea3.innerText == displayArea1.innerText) {
+                if (new Date().getTime() - startTime > spinDuration || displayArea1.innerText == displayArea2.innerText || displayArea2.innerText == displayArea3.innerText || displayArea3.innerText == displayArea1.innerText) {
                     clearInterval(interval);
                     displayArea1.classList.remove("spinning");
                     displayArea2.classList.remove("spinning");
@@ -281,11 +281,7 @@
                     displayArea1.innerText = selectedWords1[Math.floor(Math.random() * selectedWords1.length)];
                     displayArea2.innerText = selectedWords2[Math.floor(Math.random() * selectedWords2.length)];
                     displayArea3.innerText = selectedWords3[Math.floor(Math.random() * selectedWords3.length)];
-                } else {
-                    displayArea1.innerText = selectedWords1[Math.floor(Math.random() * selectedWords1.length)];
-                    displayArea2.innerText = selectedWords2[Math.floor(Math.random() * selectedWords2.length)];
-                    displayArea3.innerText = selectedWords3[Math.floor(Math.random() * selectedWords3.length)];
-                }
+                } 
             }, changeInterval);
 
 
