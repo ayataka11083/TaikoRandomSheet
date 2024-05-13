@@ -125,6 +125,8 @@
             border-radius: 5px;
         }
 
+
+
         .spinning {
             animation: spin 0.1s linear infinite;
         }
@@ -172,85 +174,107 @@
         <div id="displayArea1"></div>
         <div id="displayArea2"></div>
         <div id="displayArea3"></div>
+        <div id="displayArea4"></div>
         <h3>※何も書かれていない場合は表です</h3>
-        <h4>2024/2/21更新</h4>
+        <h4>2024/5/13更新</h4>
     </div>
 
     <script>
 
-
-
         document.getElementById("randomWordButton").addEventListener("click", function () {
 
-            var words = {
-    "地力F": ["X‐DAY2000", "Clotho クロートー", "旋風ノ舞【天】", "旋風ノ舞【天】(裏)", "チルノのパーフェクトさんすう教室(裏)", "ネクロファンタジア ～ Arr.Demetori", "拝啓ドッペルゲンガー", "BATTLE NO.1普通", "mint tears"],
-    "個人差E": ["そつおめしき", "パン vs ごはん！ 大決戦！表普通", "パン vs ごはん！ 大決戦！裏普通", "Black Rose Apostle", "Black Rose Apostle(裏)", "マツヨイナイトバグ(裏)"],
-    "地力E": ["R.I.", "蒼の旋律(裏)", "朱の旋律", "EkiBEN2000", "Kamikaze Remix", "Calamity Fortune", "キューティー☆デモニック☆魔人エモ!!", "さちさちにしてあげる♪(裏)", "スーパーD＆D ～完全にリードしてアイマイミ", "SUPERNOVA", "SstTAarR*", "タイコロール", "タベルナ2000", "儚姫は原初に舞う", "BATTLE NO.1玄人", "ヒバナ(裏)", "Blessed Bouquet Buskers", "よーいドン！"],
-    "個人差D": ["詩謳兎揺蕩兎", "ゴーゴー・キッチン(裏)", "タイコタイム(裏)", "乱数調整のリバースシンデレラ(裏)"],
-    "地力D": ["アキバ20XX", "頂", "INSPION", "ウィーアー！(裏)", "waitin' for u", "Angel Halo", "オーバード(裏)", "オーブの祈り", "きたさいたま2000", "キャラメル・ジャンキヰ", "最終鬼畜妹フランドール・S", "Surf Zapping", "Silent Jealousy(裏)", "セイクリッド ルイン(裏)", "零の交響曲(裏)", "そつおめしき2ばん", "十露盤2000", "Diving Drive", "ダンガンノーツ", "天下統一録", "Dogbite", "ドドンガド～ン(裏)", "No Gravity", "ノるどん2000", "VICTORIA", "ピコピコ ルイン(裏)", "VIVIVIVID", "FREEDOM DiVE↓", "Venomous(裏)", "星屑ストラック", "8OROCHI", "YOAKE", "夜桜謝肉祭(裏)", "ラヴ♡スパイス♡ライクユー!!!", "Libera Ray"],
-    "個人差C": ["あなたとトゥラッタッタ♪(裏)", "アンリミテッドゲームズ", "Gloria", "Central Dogma Pt.1", "弩蚊怒夏", "夏祭り / ジッタリン・ジン(裏)", "Purple Rose Fusion", "ミュージック・リボルバー(裏)", "MEGALOVANIA(裏)", "4+1のそれぞれの未来"],
-    "地力C": ["愛と浄罪の森", "アサガオ", "あの日出会えたキセキ", "Abyss of hell(裏)", "天照", "Ignis Danse", "Illusion Flare", "うちゅうひこうし冒険譚", "ex寅 Trap!!", "Evidence of evil", "カラ鞠の花", "気焔万丈神楽", "ギガンティックO.T.N(裏)", "共奏鼓祭(裏)", "Chronomia", "きゅうくらりん(裏)", "弧", "濃紅", "ゴーストマスク", "Goldfish City", "ココロボ", "ゴッドソング(裏)", "God Ray", "鼓舞曲「閻魔」", "紫煌ノ乱", "須佐之男", "Spectral Rider", "D′s Adventure Note", "D絶対！SAMURAIインザレイン(裏)", "てんぢく2000", "とける", "Doppelgangers(裏)", "白鳥の湖(裏)", "ハンロック", "ペットショップ大戦", "MagiCatz", "六華の舞", "wonderful ROUTINE"],
-    "個人差B": ["Aragami", "Garakuta Doll Play(裏)", "カラフルボイス(裏)", "Calculator", "Kill My Fortune(裏)", "ゲゲゲの鬼太郎(裏)", "刻竜 ～Kokuryu～", "神竜 ～Shinryu～", "Scarlet Lance", "星河一天", "憎悪と醜悪の花束", "Destr0yer(裏)", "ドドドドドンだフル！(裏)", "はたラク2000", "Vixtory", "秘ナルメジェドノ悲ナル憂鬱", "メタルホーク BGM1", "memoria ficta", "燎原ノ舞"],
-    "地力B": ["ANiMA", "Altale(裏)", "Aleph-0", "UNDEAD HEART(怒りのWarriors)", "怒槌", "OK I’m blue rat", "KAGEKIYO(裏)", "CUT! into the FUTURE", "極圏", "クラポルポルスカ", "Got more raves？(裏)", "秋竜 ～Shiuryu～(裏)", "疾風怒濤", "承認欲Q", "晨星ト鵺", "SUPERNOVA(裏)", "Stick Trick ShowTime!!", "月読命", "電脳幻夜の星言詠", "トイマチック☆パレード!!", "Doom Noiz", "Hello, Mr.JOKER", "人のお金で焼肉を食したい！(裏)", "FUJIN Rumble", "ヘイラ(裏)", "またさいたま2000", "三瀬川乱舞(裏)", "メカデス。(裏)", "めためた☆ゆにば～すっ！(裏)", "モノクロボイス", "Re ： End of a Dream(裏)", "竜と黒炎の姫君(裏)", "練習曲Op.10-4(裏)", "Rotter Tarmination(裏)", "六本の薔薇と采の歌(裏)", "What’s in the box？"],
-    "個人差A": ["ARMAGEΔDON", "Unwelcome School(MRM REMIX)(裏)", "EterNal Ring", "懐中庭園を持つ少女", "絡繰廻廊", "Caribbean Knight", "鼓立あおはる学園校歌", "束ね糸", "チルノのパーフェクトさんすう教室 ⑨(裏)", "儚姫は原初に舞う(裏)", "ひよこ鑑定士さん", "BLAZING VORTEX(裏)", "Player's High"],
-    "地力A": ["哀 want U", "或ル不和", "VERTeX", "ウルトラマンX(裏)", "郢曲／暁闇", "Agent Hustle & Dr. Hassle", "GERBERA", "SAVAGE DELIGHT", "〆ドレー2000", "重金属フューギティブ", "Xevel", "其方、激昂", "SORA‐Ⅶ シグナスウォール", "超絶技巧系少女", "テトラリュトモスフォビア", "天泣の律", "転生〈TENSEI〉-喜与志が待つ強者-(裏)", "Toon Town’s Toys’ Tune", "ナイトメア・サバイバー(裏)", "BATTLE NO.1達人", "Honey Heartbeat ～10 Stars Mix～(裏)", "Parousia", "パン vs ごはん！ 大決戦！表達人", "プチポチ", "FLOWER(裏)", "もぺもぺ", "螺旋周回軌道(裏)", "LECIEL GLISSANDO", "冷凍庫CJ ～嗚呼面太鼓ブラザーズ～"],
-    "個人差A+": ["赤と白薔薇の魔女", "ON SAY GO SAY(裏)", "カルメン 組曲一番終曲(裏)", "森羅万象", "デッド・オア・ダイ", "23時54分、陽の旅路へのプレリュード", "にゃーにゃーにゃー", "メタナイトの逆襲メドレー(裏)", "8OROCHI(裏)"],
-    "地力A+": ["アムピト♢リーテー", "美しく忙しきドナウ(裏)", "ouroboros ‐twin stroke of the end‐", "χ談", "カラフル", "彼は誰時の誘惑(裏)", "コネクトカラーズ", "GORI×GORI×SafaRI(裏)", "The Future of the 太鼓ドラム", "万戈イム－一ノ十", "青天の黎明", "Central Dogma Pt.2", "Taiko Drum Monster", "DEBSTEP！", "Dreadnought(裏)", "Don’t Stop the Game", "HARDCOREノ心得", "幕末維新譚", "†バチ!ムチ!?マッスルキングダム†", "パン vs ごはん！ 大決戦！裏達人", "Behemoth", "まるくてはやくてすさまじいリズム", "モノクロームユートピア", "ラパスの虹(裏)"],
-    "個人差S": ["Xa(裏)", "氷竜 ～Kooryu～(裏)", "たいこの2000", "チャーリー ダッシュ！", "Nosferatu(裏)", "Hurtling Boys", "モノクロボイス(裏)", "UFO Swingin’"],
-    "地力S": ["彁", "CUT! into the FUTURE(裏)", "Calamity Fortune(裏)", "狂瀾怒濤(裏)", "業 -善なる神とこの世の悪について-(裏)", "Coquette", "スーハー2000", "続・〆ドレー2000", "そして勇者は眠りにつく(裏)", "Taiko Drum Monster(裏)", "魑魅魍魎", "Challengers", "≠MM", "とける(裏)", "初音ミクの消失‐劇場版‐(裏)", "星屑ストラック(裏)", "LΔchesis(裏)", "λ7708", "わら得る2000"],
-    "個人差S+": ["!!!カオスタイム!!!", "†††カオスタイム the DARK†††", "疾風怒濤(裏)", "双竜ノ乱", "!!!チルノのパーフェクトさんすうタイム!!!", "まださいたま2000"],
-    "SS": ["Infinite Rebellion", "彁(裏)", "The Future of the 太鼓ドラム(裏)", "神竜 ～Shinryu～(裏)", "Central Dogma Pt.1(裏)", "憎悪と醜悪の花束(裏)", "第六天魔王", "ダンガンノーツ(裏)", "Destination 2F29", "ドンカマ2000", "23時54分、陽の旅路へのプレリュード(裏)", "Vixtory(裏)", "poxei♦DOON", "幽玄ノ乱", "ラ・モレーナ・クモナイ(裏)"]
-};
 
             var list = document.getElementById("list");
             var selected = list.options[list.selectedIndex].text;
             var DaniNum = 0;
             var RandomNum = 0;
             var TotalNum = 0;
-            var dani1 = "", dani2 = "", dani3 = "", dani12 = "", dani22 = "", dani32 = "";
+            var dani1 = "", dani2 = "", dani3 = "";
             
             var conditions = "";
             switch (selected) {
-                case "六段": DaniNum = 0; RandomNum = Math.floor(Math.random() * 1); break;
-                case "七段": DaniNum = 1; RandomNum = Math.floor(Math.random() * 1); break;
-                case "八段": DaniNum = 2; RandomNum = Math.floor(Math.random() * 5); break;
-                case "九段": DaniNum = 3; RandomNum = Math.floor(Math.random() * 5); break;
-                case "十段": DaniNum = 4; RandomNum = Math.floor(Math.random() * 6); break;
-                case "玄人": DaniNum = 5; RandomNum = Math.floor(Math.random() * 6); break;
-                case "名人": DaniNum = 6; RandomNum = Math.floor(Math.random() * 5); break;
-                case "超人": DaniNum = 7; RandomNum = Math.floor(Math.random() * 5); break;
-                case "達人": DaniNum = 8; RandomNum = Math.floor(Math.random() * 4); break;
+                case "六段": DaniNum = 0; RandomNum = Math.floor(Math.random() * 3); break;
+                case "七段": DaniNum = 1; RandomNum = Math.floor(Math.random() * 5); break;
+                case "八段": DaniNum = 2; RandomNum = Math.floor(Math.random() * 6); break;
+                case "九段": DaniNum = 3; RandomNum = Math.floor(Math.random() * 7); break;
+                case "十段": DaniNum = 4; RandomNum = Math.floor(Math.random() * 7); break;
+                case "玄人": DaniNum = 5; RandomNum = Math.floor(Math.random() * 8); break;
+                case "名人": DaniNum = 6; RandomNum = Math.floor(Math.random() * 8); break;
+                case "超人": DaniNum = 7; RandomNum = Math.floor(Math.random() * 8); break;
+                case "達人": DaniNum = 8; RandomNum = Math.floor(Math.random() * 8); break;
             }
             TotalNum = DaniNum * 10 + RandomNum;
+            console.log(TotalNum);
 
             switch (TotalNum) {
-                case 0: dani1 = "個人差D"; dani2 = "個人差D"; dani3 = "個人差D"; conditions = "テスト"; break;
-                case 10: dani1 = "A"; dani2 = "A"; dani3 = "A"; conditions = "テスト2"; break;
+                case 0: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "スコア240万点以上"; break;
+                case 1: dani1 = "E"; dani2 = "D"; dani3 = "C"; conditions = "スコア230万点以上"; break;
+                case 2: dani1 = "D"; dani2 = "C"; dani3 = "B"; conditions = "スコア220万点以上"; break;
+                case 10: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "スコア250万点以上 , 不可の数100未満"; break;
+                case 11: dani1 = "E"; dani2 = "D"; dani3 = "C"; conditions = "スコア240万点以上"; break;
+                case 12: dani1 = "D"; dani2 = "C"; dani3 = "B"; conditions = "スコア235万点以上"; break;
+                case 13: dani1 = "C"; dani2 = "B"; dani3 = "A"; conditions = "スコア230万点以上"; break;
+                case 14: dani1 = "B "; dani2 = "A"; dani3 = "A+"; conditions = "スコア220万点以上"; break;
+                case 20: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "スコア260万点以上 , 不可の数60未満"; break;
+                case 21: dani1 = "E"; dani2 = "D"; dani3 = "C"; conditions = "スコア250万点以上 , 不可の数80未満"; break;
+                case 22: dani1 = "D"; dani2 = "C"; dani3 = "B"; conditions = "スコア245万点以上"; break;
+                case 23: dani1 = "C"; dani2 = "B"; dani3 = "A"; conditions = "スコア240万点以上"; break;
+                case 24: dani1 = "B"; dani2 = "A"; dani3 = "A+"; conditions = "スコア230万点以上"; break;
+                case 25: dani1 = "A"; dani2 = "A+"; dani3 = "S"; conditions = "スコア220万点以上"; break;
+                case 30: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "可の数250未満 , 不可の数20未満"; break;
+                case 31: dani1 = "E"; dani2 = "D"; dani3 = "C"; conditions = "可の数350未満 , 不可の数30未満"; break;
+                case 32: dani1 = "D"; dani2 = "C"; dani3 = "B"; conditions = "スコア265万点以上 , 不可の数50未満"; break;
+                case 33: dani1 = "C"; dani2 = "B"; dani3 = "A"; conditions = "スコア260万点以上 , 不可の数70未満"; break;
+                case 34: dani1 = "B"; dani2 = "A"; dani3 = "A+"; conditions = "スコア255万点以上 , 不可の数100未満"; break;
+                case 35: dani1 = "A"; dani2 = "A+"; dani3 = "S"; conditions = "スコア250万点以上"; break;
+                case 36: dani1 = "S"; dani2 = "S"; dani3 = "個人差S+"; conditions = "スコア240万点以上"; break;
+                case 40: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "可の数50未満 , 不可の数7未満"; break;
+                case 41: dani1 = "D"; dani2 = "D"; dani3 = "C"; conditions = "可の数80未満 , 不可の数10未満"; break;
+                case 42: dani1 = "C"; dani2 = "C"; dani3 = "B"; conditions = "可の数120未満 , 不可の数14未満"; break;
+                case 43: dani1 = "B"; dani2 = "B"; dani3 = "A"; conditions = "可の数200未満 , 不可の数20未満"; break;
+                case 44: dani1 = "A"; dani2 = "A"; dani3 = "A+"; conditions = "可の数250未満 , 不可の数25未満"; break;
+                case 45: dani1 = "A+"; dani2 = "A+"; dani3 = "S"; conditions = "スコア270万点以上 , 不可の数40未満"; break;
+                case 46: dani1 = "S+"; dani2 = "S+"; dani3 = "SS"; conditions = "スコア250万点以上"; break;
+                case 50: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "可の数30未満 , 不可の数5未満"; break;
+                case 51: dani1 = "D"; dani2 = "D"; dani3 = "C"; conditions = "可の数35未満 , 不可の数5未満"; break;
+                case 52: dani1 = "C"; dani2 = "C"; dani3 = "B"; conditions = "可の数45未満 , 不可の数6未満"; break;
+                case 53: dani1 = "B"; dani2 = "B"; dani3 = "A"; conditions = "可の数65未満 , 不可の数8未満"; break;
+                case 54: dani1 = "A"; dani2 = "A"; dani3 = "A+"; conditions = "可の数90未満 , 不可の数10未満"; break;
+                case 55: dani1 = "A+"; dani2 = "A+"; dani3 = "S"; conditions = "可の数150未満 , 不可の数20未満"; break;
+                case 56: dani1 = "S+"; dani2 = "S+"; dani3 = "SS"; conditions = "スコア275万点以上 , 不可の数40未満"; break;
+                case 57: dani1 = "SS"; dani2 = "SS"; dani3 = "SS"; conditions = "スコア255万点以上 , 不可の数90未満"; break;
+                case 60: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "可の数15未満 , 不可の数4未満"; break;
+                case 61: dani1 = "D"; dani2 = "D"; dani3 = "C"; conditions = "可の数18未満 , 不可の数4未満"; break;
+                case 62: dani1 = "C"; dani2 = "C"; dani3 = "B"; conditions = "可の数20未満 , 不可の数4未満"; break;
+                case 63: dani1 = "B"; dani2 = "B"; dani3 = "A"; conditions = "可の数25未満 , 不可の数5未満"; break;
+                case 64: dani1 = "A"; dani2 = "A"; dani3 = "A+"; conditions = "可の数30未満 , 不可の数5未満"; break;
+                case 65: dani1 = "A+"; dani2 = "A+"; dani3 = "S"; conditions = "可の数60未満 , 不可の数7未満"; break;
+                case 66: dani1 = "S+"; dani2 = "S+"; dani3 = "SS"; conditions = "可の数200未満 , 不可の数25未満"; break;
+                case 67: dani1 = "SS"; dani2 = "SS"; dani3 = "SS"; conditions = "スコア275万点以上 , 不可の数50未満"; break;
+                case 70: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "可の数5未満 , 不可の数3未満"; break;
+                case 71: dani1 = "D"; dani2 = "D"; dani3 = "C"; conditions = "可の数7未満 , 不可の数3未満"; break;
+                case 72: dani1 = "C"; dani2 = "C"; dani3 = "B"; conditions = "可の数8未満 , 不可の数3未満"; break;
+                case 73: dani1 = "B"; dani2 = "B"; dani3 = "A"; conditions = "可の数10未満 , 不可の数3未満"; break;
+                case 74: dani1 = "A"; dani2 = "A"; dani3 = "A+"; conditions = "可の数12未満 , 不可の数4未満"; break;
+                case 75: dani1 = "A+"; dani2 = "A+"; dani3 = "S"; conditions = "可の数15未満 , 不可の数4未満"; break;
+                case 76: dani1 = "S+"; dani2 = "S+"; dani3 = "SS"; conditions = "可の数45未満 , 不可の数8未満"; break;
+                case 77: dani1 = "SS"; dani2 = "SS"; dani3 = "SS"; conditions = "可の数80未満 , 不可の数15未満"; break;
+                case 80: dani1 = "F"; dani2 = "E"; dani3 = "D"; conditions = "可の数5未満 , 不可の数3未満"; break;
+                case 81: dani1 = "D"; dani2 = "D"; dani3 = "C"; conditions = "可の数5未満 , 不可の数3未満"; break;
+                case 82: dani1 = "C"; dani2 = "C"; dani3 = "B"; conditions = "可の数5未満 , 不可の数3未満"; break;
+                case 83: dani1 = "B"; dani2 = "B"; dani3 = "A"; conditions = "可の数6未満 , 不可の数3未満"; break;
+                case 84: dani1 = "A"; dani2 = "A"; dani3 = "A+"; conditions = "可の数7未満 , 不可の数3未満"; break;
+                case 85: dani1 = "A+"; dani2 = "A+"; dani3 = "S"; conditions = "可の数8未満 , 不可の数3未満"; break;
+                case 86: dani1 = "S+"; dani2 = "S+"; dani3 = "SS"; conditions = "可の数10未満 , 不可の数4未満"; break;
+                case 87: dani1 = "SS"; dani2 = "SS"; dani3 = "SS"; conditions = "可の数20未満 , 不可の数7未満"; break;
             }
 
+            var displayArea4 = document.getElementById("displayArea4");
+            displayArea4.innerText = "";
 
-
-
-
-
-
-
-
-
-
-
-
-
-            //var displayArea4 = document.getElementById("displayArea4");
-            //displayArea4.innerText = conditions;
-
-            //var selectedWords1 = SetWord(dani1);
-            //var selectedWords2 = SetWord(dani2);
-            //var selectedWords3 = SetWord(dani3);
-
-            var selectedWords1 = words["dani1"];
-            var selectedWords2 = words["dani2"];
-            var selectedWords3 = words["dani3"];
+            var selectedWords1 = SetWord(dani1);
+            var selectedWords2 = SetWord(dani2);
+            var selectedWords3 = SetWord(dani3);
 
 
             if (selectedWords1.length === 0 || selectedWords2.length === 0 || selectedWords3.length === 0) {
@@ -272,15 +296,18 @@
             var startTime = new Date().getTime();
 
             var interval = setInterval(function () {
-                if (new Date().getTime() - startTime > spinDuration || displayArea1.innerText == displayArea2.innerText || displayArea2.innerText == displayArea3.innerText || displayArea3.innerText == displayArea1.innerText) {
+                if (new Date().getTime() - startTime > spinDuration && (displayArea1.innerText != displayArea2.innerText && displayArea2.innerText != displayArea3.innerText && displayArea3.innerText != displayArea1.innerText)) {
                     clearInterval(interval);
                     displayArea1.classList.remove("spinning");
                     displayArea2.classList.remove("spinning");
                     displayArea3.classList.remove("spinning");
+                    displayArea4.innerText = conditions;
+                }
+                else {
                     displayArea1.innerText = selectedWords1[Math.floor(Math.random() * selectedWords1.length)];
                     displayArea2.innerText = selectedWords2[Math.floor(Math.random() * selectedWords2.length)];
                     displayArea3.innerText = selectedWords3[Math.floor(Math.random() * selectedWords3.length)];
-                } 
+                }
             }, changeInterval);
 
 
@@ -288,44 +315,45 @@
             
         });
 
-/*
-        function SetWord(input){
+
+        function SetWord(input) {
 
             var words = {
-    "地力F": ["X‐DAY2000", "Clotho クロートー", "旋風ノ舞【天】", "旋風ノ舞【天】(裏)", "チルノのパーフェクトさんすう教室(裏)", "ネクロファンタジア ～ Arr.Demetori", "拝啓ドッペルゲンガー", "BATTLE NO.1普通", "mint tears"],
-    "個人差E": ["そつおめしき", "パン vs ごはん！ 大決戦！表普通", "パン vs ごはん！ 大決戦！裏普通", "Black Rose Apostle", "Black Rose Apostle(裏)", "マツヨイナイトバグ(裏)"],
-    "地力E": ["R.I.", "蒼の旋律(裏)", "朱の旋律", "EkiBEN2000", "Kamikaze Remix", "Calamity Fortune", "キューティー☆デモニック☆魔人エモ!!", "さちさちにしてあげる♪(裏)", "スーパーD＆D ～完全にリードしてアイマイミ", "SUPERNOVA", "SstTAarR*", "タイコロール", "タベルナ2000", "儚姫は原初に舞う", "BATTLE NO.1玄人", "ヒバナ(裏)", "Blessed Bouquet Buskers", "よーいドン！"],
-    "個人差D": ["詩謳兎揺蕩兎", "ゴーゴー・キッチン(裏)", "タイコタイム(裏)", "乱数調整のリバースシンデレラ(裏)"],
-    "地力D": ["アキバ20XX", "頂", "INSPION", "ウィーアー！(裏)", "waitin' for u", "Angel Halo", "オーバード(裏)", "オーブの祈り", "きたさいたま2000", "キャラメル・ジャンキヰ", "最終鬼畜妹フランドール・S", "Surf Zapping", "Silent Jealousy(裏)", "セイクリッド ルイン(裏)", "零の交響曲(裏)", "そつおめしき2ばん", "十露盤2000", "Diving Drive", "ダンガンノーツ", "天下統一録", "Dogbite", "ドドンガド～ン(裏)", "No Gravity", "ノるどん2000", "VICTORIA", "ピコピコ ルイン(裏)", "VIVIVIVID", "FREEDOM DiVE↓", "Venomous(裏)", "星屑ストラック", "8OROCHI", "YOAKE", "夜桜謝肉祭(裏)", "ラヴ♡スパイス♡ライクユー!!!", "Libera Ray"],
-    "個人差C": ["あなたとトゥラッタッタ♪(裏)", "アンリミテッドゲームズ", "Gloria", "Central Dogma Pt.1", "弩蚊怒夏", "夏祭り / ジッタリン・ジン(裏)", "Purple Rose Fusion", "ミュージック・リボルバー(裏)", "MEGALOVANIA(裏)", "4+1のそれぞれの未来"],
-    "地力C": ["愛と浄罪の森", "アサガオ", "あの日出会えたキセキ", "Abyss of hell(裏)", "天照", "Ignis Danse", "Illusion Flare", "うちゅうひこうし冒険譚", "ex寅 Trap!!", "Evidence of evil", "カラ鞠の花", "気焔万丈神楽", "ギガンティックO.T.N(裏)", "共奏鼓祭(裏)", "Chronomia", "きゅうくらりん(裏)", "弧", "濃紅", "ゴーストマスク", "Goldfish City", "ココロボ", "ゴッドソング(裏)", "God Ray", "鼓舞曲「閻魔」", "紫煌ノ乱", "須佐之男", "Spectral Rider", "D′s Adventure Note", "D絶対！SAMURAIインザレイン(裏)", "てんぢく2000", "とける", "Doppelgangers(裏)", "白鳥の湖(裏)", "ハンロック", "ペットショップ大戦", "MagiCatz", "六華の舞", "wonderful ROUTINE"],
-    "個人差B": ["Aragami", "Garakuta Doll Play(裏)", "カラフルボイス(裏)", "Calculator", "Kill My Fortune(裏)", "ゲゲゲの鬼太郎(裏)", "刻竜 ～Kokuryu～", "神竜 ～Shinryu～", "Scarlet Lance", "星河一天", "憎悪と醜悪の花束", "Destr0yer(裏)", "ドドドドドンだフル！(裏)", "はたラク2000", "Vixtory", "秘ナルメジェドノ悲ナル憂鬱", "メタルホーク BGM1", "memoria ficta", "燎原ノ舞"],
-    "地力B": ["ANiMA", "Altale(裏)", "Aleph-0", "UNDEAD HEART(怒りのWarriors)", "怒槌", "OK I’m blue rat", "KAGEKIYO(裏)", "CUT! into the FUTURE", "極圏", "クラポルポルスカ", "Got more raves？(裏)", "秋竜 ～Shiuryu～(裏)", "疾風怒濤", "承認欲Q", "晨星ト鵺", "SUPERNOVA(裏)", "Stick Trick ShowTime!!", "月読命", "電脳幻夜の星言詠", "トイマチック☆パレード!!", "Doom Noiz", "Hello, Mr.JOKER", "人のお金で焼肉を食したい！(裏)", "FUJIN Rumble", "ヘイラ(裏)", "またさいたま2000", "三瀬川乱舞(裏)", "メカデス。(裏)", "めためた☆ゆにば～すっ！(裏)", "モノクロボイス", "Re ： End of a Dream(裏)", "竜と黒炎の姫君(裏)", "練習曲Op.10-4(裏)", "Rotter Tarmination(裏)", "六本の薔薇と采の歌(裏)", "What’s in the box？"],
-    "個人差A": ["ARMAGEΔDON", "Unwelcome School(MRM REMIX)(裏)", "EterNal Ring", "懐中庭園を持つ少女", "絡繰廻廊", "Caribbean Knight", "鼓立あおはる学園校歌", "束ね糸", "チルノのパーフェクトさんすう教室 ⑨(裏)", "儚姫は原初に舞う(裏)", "ひよこ鑑定士さん", "BLAZING VORTEX(裏)", "Player's High"],
-    "地力A": ["哀 want U", "或ル不和", "VERTeX", "ウルトラマンX(裏)", "郢曲／暁闇", "Agent Hustle & Dr. Hassle", "GERBERA", "SAVAGE DELIGHT", "〆ドレー2000", "重金属フューギティブ", "Xevel", "其方、激昂", "SORA‐Ⅶ シグナスウォール", "超絶技巧系少女", "テトラリュトモスフォビア", "天泣の律", "転生〈TENSEI〉-喜与志が待つ強者-(裏)", "Toon Town’s Toys’ Tune", "ナイトメア・サバイバー(裏)", "BATTLE NO.1達人", "Honey Heartbeat ～10 Stars Mix～(裏)", "Parousia", "パン vs ごはん！ 大決戦！表達人", "プチポチ", "FLOWER(裏)", "もぺもぺ", "螺旋周回軌道(裏)", "LECIEL GLISSANDO", "冷凍庫CJ ～嗚呼面太鼓ブラザーズ～"],
-    "個人差A+": ["赤と白薔薇の魔女", "ON SAY GO SAY(裏)", "カルメン 組曲一番終曲(裏)", "森羅万象", "デッド・オア・ダイ", "23時54分、陽の旅路へのプレリュード", "にゃーにゃーにゃー", "メタナイトの逆襲メドレー(裏)", "8OROCHI(裏)"],
-    "地力A+": ["アムピト♢リーテー", "美しく忙しきドナウ(裏)", "ouroboros ‐twin stroke of the end‐", "χ談", "カラフル", "彼は誰時の誘惑(裏)", "コネクトカラーズ", "GORI×GORI×SafaRI(裏)", "The Future of the 太鼓ドラム", "万戈イム－一ノ十", "青天の黎明", "Central Dogma Pt.2", "Taiko Drum Monster", "DEBSTEP！", "Dreadnought(裏)", "Don’t Stop the Game", "HARDCOREノ心得", "幕末維新譚", "†バチ!ムチ!?マッスルキングダム†", "パン vs ごはん！ 大決戦！裏達人", "Behemoth", "まるくてはやくてすさまじいリズム", "モノクロームユートピア", "ラパスの虹(裏)"],
-    "個人差S": ["Xa(裏)", "氷竜 ～Kooryu～(裏)", "たいこの2000", "チャーリー ダッシュ！", "Nosferatu(裏)", "Hurtling Boys", "モノクロボイス(裏)", "UFO Swingin’"],
-    "地力S": ["彁", "CUT! into the FUTURE(裏)", "Calamity Fortune(裏)", "狂瀾怒濤(裏)", "業 -善なる神とこの世の悪について-(裏)", "Coquette", "スーハー2000", "続・〆ドレー2000", "そして勇者は眠りにつく(裏)", "Taiko Drum Monster(裏)", "魑魅魍魎", "Challengers", "≠MM", "とける(裏)", "初音ミクの消失‐劇場版‐(裏)", "星屑ストラック(裏)", "LΔchesis(裏)", "λ7708", "わら得る2000"],
-    "個人差S+": ["!!!カオスタイム!!!", "†††カオスタイム the DARK†††", "疾風怒濤(裏)", "双竜ノ乱", "!!!チルノのパーフェクトさんすうタイム!!!", "まださいたま2000"],
-    "SS": ["Infinite Rebellion", "彁(裏)", "The Future of the 太鼓ドラム(裏)", "神竜 ～Shinryu～(裏)", "Central Dogma Pt.1(裏)", "憎悪と醜悪の花束(裏)", "第六天魔王", "ダンガンノーツ(裏)", "Destination 2F29", "ドンカマ2000", "23時54分、陽の旅路へのプレリュード(裏)", "Vixtory(裏)", "poxei♦DOON", "幽玄ノ乱", "ラ・モレーナ・クモナイ(裏)"]
-};
+                "地力F": ["X‐DAY2000", "Clotho クロートー", "旋風ノ舞【天】", "旋風ノ舞【天】(裏)", "チルノのパーフェクトさんすう教室(裏)", "ネクロファンタジア ～ Arr.Demetori", "拝啓ドッペルゲンガー", "BATTLE NO.1普通", "mint tears"],
+                "個人差E": ["そつおめしき", "パン vs ごはん！ 大決戦！表普通", "パン vs ごはん！ 大決戦！裏普通", "Black Rose Apostle", "Black Rose Apostle(裏)", "マツヨイナイトバグ(裏)"],
+                "地力E": ["R.I.", "蒼の旋律(裏)", "朱の旋律", "EkiBEN2000", "Kamikaze Remix", "Calamity Fortune", "キューティー☆デモニック☆魔人エモ!!", "さちさちにしてあげる♪(裏)", "スーパーD＆D ～完全にリードしてアイマイミ", "SUPERNOVA", "SstTAarR*", "タイコロール", "タベルナ2000", "儚姫は原初に舞う", "BATTLE NO.1玄人", "ヒバナ(裏)", "Blessed Bouquet Buskers", "よーいドン！"],
+                "個人差D": ["詩謳兎揺蕩兎", "ゴーゴー・キッチン(裏)", "タイコタイム(裏)", "乱数調整のリバースシンデレラ(裏)"],
+                "地力D": ["アキバ20XX", "頂", "INSPION", "ウィーアー！(裏)", "waitin' for u", "Angel Halo", "オーバード(裏)", "オーブの祈り", "きたさいたま2000", "キャラメル・ジャンキヰ", "最終鬼畜妹フランドール・S", "Surf Zapping", "Silent Jealousy(裏)", "セイクリッド ルイン(裏)", "零の交響曲(裏)", "そつおめしき2ばん", "十露盤2000", "Diving Drive", "ダンガンノーツ", "天下統一録", "Dogbite", "ドドンガド～ン(裏)", "No Gravity", "ノるどん2000", "VICTORIA", "ピコピコ ルイン(裏)", "VIVIVIVID", "FREEDOM DiVE↓", "Venomous(裏)", "星屑ストラック", "8OROCHI", "YOAKE", "夜桜謝肉祭(裏)", "ラヴ♡スパイス♡ライクユー!!!", "Libera Ray"],
+                "個人差C": ["あなたとトゥラッタッタ♪(裏)", "アンリミテッドゲームズ", "Gloria", "Central Dogma Pt.1", "弩蚊怒夏", "夏祭り / ジッタリン・ジン(裏)", "Purple Rose Fusion", "ミュージック・リボルバー(裏)", "MEGALOVANIA(裏)", "4+1のそれぞれの未来"],
+                "地力C": ["愛と浄罪の森", "アサガオ", "あの日出会えたキセキ", "Abyss of hell(裏)", "天照", "Ignis Danse", "Illusion Flare", "うちゅうひこうし冒険譚", "ex寅 Trap!!", "Evidence of evil", "カラ鞠の花", "気焔万丈神楽", "ギガンティックO.T.N(裏)", "共奏鼓祭(裏)", "Chronomia", "きゅうくらりん(裏)", "弧", "濃紅", "ゴーストマスク", "Goldfish City", "ココロボ", "ゴッドソング(裏)", "God Ray", "鼓舞曲「閻魔」", "紫煌ノ乱", "須佐之男", "Spectral Rider", "D′s Adventure Note", "D絶対！SAMURAIインザレイン(裏)", "てんぢく2000", "とける", "Doppelgangers(裏)", "白鳥の湖(裏)", "ハンロック", "ペットショップ大戦", "MagiCatz", "六華の舞", "wonderful ROUTINE"],
+                "個人差B": ["Aragami", "Garakuta Doll Play(裏)", "カラフルボイス(裏)", "Calculator", "Kill My Fortune(裏)", "ゲゲゲの鬼太郎(裏)", "刻竜 ～Kokuryu～", "神竜 ～Shinryu～", "Scarlet Lance", "星河一天", "憎悪と醜悪の花束", "Destr0yer(裏)", "ドドドドドンだフル！(裏)", "はたラク2000", "Vixtory", "秘ナルメジェドノ悲ナル憂鬱", "メタルホーク BGM1", "memoria ficta", "燎原ノ舞"],
+                "地力B": ["ANiMA", "Altale(裏)", "Aleph-0", "UNDEAD HEART(怒りのWarriors)", "怒槌", "OK I’m blue rat", "KAGEKIYO(裏)", "CUT! into the FUTURE", "極圏", "クラポルポルスカ", "Got more raves？(裏)", "秋竜 ～Shiuryu～(裏)", "疾風怒濤", "承認欲Q", "晨星ト鵺", "SUPERNOVA(裏)", "Stick Trick ShowTime!!", "月読命", "電脳幻夜の星言詠", "トイマチック☆パレード!!", "Doom Noiz", "Hello, Mr.JOKER", "人のお金で焼肉を食したい！(裏)", "FUJIN Rumble", "ヘイラ(裏)", "またさいたま2000", "三瀬川乱舞(裏)", "メカデス。(裏)", "めためた☆ゆにば～すっ！(裏)", "モノクロボイス", "Re ： End of a Dream(裏)", "竜と黒炎の姫君(裏)", "練習曲Op.10-4(裏)", "Rotter Tarmination(裏)", "六本の薔薇と采の歌(裏)", "What’s in the box？"],
+                "個人差A": ["ARMAGEΔDON", "Unwelcome School(MRM REMIX)(裏)", "EterNal Ring", "懐中庭園を持つ少女", "絡繰廻廊", "Caribbean Knight", "鼓立あおはる学園校歌", "束ね糸", "チルノのパーフェクトさんすう教室 ⑨(裏)", "儚姫は原初に舞う(裏)", "ひよこ鑑定士さん", "BLAZING VORTEX(裏)", "Player's High"],
+                "地力A": ["哀 want U", "或ル不和", "VERTeX", "ウルトラマンX(裏)", "郢曲／暁闇", "Agent Hustle & Dr. Hassle", "GERBERA", "SAVAGE DELIGHT", "〆ドレー2000", "重金属フューギティブ", "Xevel", "其方、激昂", "SORA‐Ⅶ シグナスウォール", "超絶技巧系少女", "テトラリュトモスフォビア", "天泣の律", "転生〈TENSEI〉-喜与志が待つ強者-(裏)", "Toon Town’s Toys’ Tune", "ナイトメア・サバイバー(裏)", "BATTLE NO.1達人", "Honey Heartbeat ～10 Stars Mix～(裏)", "Parousia", "パン vs ごはん！ 大決戦！表達人", "プチポチ", "FLOWER(裏)", "もぺもぺ", "螺旋周回軌道(裏)", "LECIEL GLISSANDO", "冷凍庫CJ ～嗚呼面太鼓ブラザーズ～"],
+                "個人差A+": ["赤と白薔薇の魔女", "ON SAY GO SAY(裏)", "カルメン 組曲一番終曲(裏)", "森羅万象", "デッド・オア・ダイ", "23時54分、陽の旅路へのプレリュード", "にゃーにゃーにゃー", "メタナイトの逆襲メドレー(裏)", "8OROCHI(裏)"],
+                "地力A+": ["アムピト♢リーテー", "美しく忙しきドナウ(裏)", "ouroboros ‐twin stroke of the end‐", "χ談", "カラフル", "彼は誰時の誘惑(裏)", "コネクトカラーズ", "GORI×GORI×SafaRI(裏)", "The Future of the 太鼓ドラム", "万戈イム－一ノ十", "青天の黎明", "Central Dogma Pt.2", "Taiko Drum Monster", "DEBSTEP！", "Dreadnought(裏)", "Don’t Stop the Game", "HARDCOREノ心得", "幕末維新譚", "†バチ!ムチ!?マッスルキングダム†", "パン vs ごはん！ 大決戦！裏達人", "Behemoth", "まるくてはやくてすさまじいリズム", "モノクロームユートピア", "ラパスの虹(裏)"],
+                "個人差S": ["Xa(裏)", "氷竜 ～Kooryu～(裏)", "たいこの2000", "チャーリー ダッシュ！", "Nosferatu(裏)", "Hurtling Boys", "モノクロボイス(裏)", "UFO Swingin’"],
+                "地力S": ["彁", "CUT! into the FUTURE(裏)", "Calamity Fortune(裏)", "狂瀾怒濤(裏)", "業 -善なる神とこの世の悪について-(裏)", "Coquette", "スーハー2000", "続・〆ドレー2000", "そして勇者は眠りにつく(裏)", "Taiko Drum Monster(裏)", "魑魅魍魎", "Challengers", "≠MM", "とける(裏)", "初音ミクの消失‐劇場版‐(裏)", "星屑ストラック(裏)", "LΔchesis(裏)", "λ7708", "わら得る2000"],
+                "個人差S+": ["!!!カオスタイム!!!", "†††カオスタイム the DARK†††", "疾風怒濤(裏)", "双竜ノ乱", "!!!チルノのパーフェクトさんすうタイム!!!", "まださいたま2000"],
+                "SS": ["Infinite Rebellion", "彁(裏)", "The Future of the 太鼓ドラム(裏)", "神竜 ～Shinryu～(裏)", "Central Dogma Pt.1(裏)", "憎悪と醜悪の花束(裏)", "第六天魔王", "ダンガンノーツ(裏)", "Destination 2F29", "ドンカマ2000", "23時54分、陽の旅路へのプレリュード(裏)", "Vixtory(裏)", "poxei♦DOON", "幽玄ノ乱", "ラ・モレーナ・クモナイ(裏)"]
+            };
 
-if (["F", "E", "D", "C", "B", "A", "S", "S+"].includes(input)) {
-    switch(input){
-        case "F": return words["地力F"];
-        case "E": return words["地力E"].concat(words["個人差E"]);
-        case "D": return words["地力D"].concat(words["個人差D"]);
-        case "C": return words["地力C"].concat(words["個人差C"]);
-        case "B": return words["地力B"].concat(words["個人差B"]);
-        case "A": return words["地力A"].concat(words["個人差A"]);
-        case "S": return words["地力S"].concat(words["個人差S"]);
-        case "S+": return words["地力S"].concat(words["個人差S+"], words["個人差S"]);
-    }
-}
-else return words[input];
-}
-*/
+            if (["F", "E", "D", "C", "B", "A", "A+", "S", "S+"].includes(input)) {
+                switch (input) {
+                    case "F": return words["地力F"];
+                    case "E": return words["地力E"].concat(words["個人差E"]);
+                    case "D": return words["地力D"].concat(words["個人差D"]);
+                    case "C": return words["地力C"].concat(words["個人差C"]);
+                    case "B": return words["地力B"].concat(words["個人差B"]);
+                    case "A": return words["地力A"].concat(words["個人差A"]);
+                    case "A+": return words["地力A+"].concat(words["個人差A+"]);
+                    case "S": return words["地力S"].concat(words["個人差S"]);
+                    case "S+": return words["地力S"].concat(words["個人差S+"], words["個人差S"]);
+                }
+            }
+            else return words[input];
+        }
+
 
 
 
