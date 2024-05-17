@@ -140,6 +140,15 @@
                 transform: rotateX(360deg);
             }
         }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
     </style>
 </head>
 <body>
@@ -170,14 +179,38 @@
             </select>
         </div>
 
+        <div class="checkbox-group">
+            <input type="checkbox" id="Dekin">
+            <label for="tagB">出禁曲を表示しない</label>
+        </div>
+
+
+
         <button id="randomWordButton">曲を抽選する</button>
         <div id="displayArea1"></div>
         <div id="displayArea2"></div>
         <div id="displayArea3"></div>
-        <div id="displayArea4"></div>
+        <div id="displayArea4">　</div>
         <h3>※何も書かれていない場合は表です</h3>
         <h4>2024/5/13更新</h4>
+
+        <p id="clickableText" style="color: black; cursor: pointer;">出禁曲一覧</p>
+
+        <div id="hiddenText" class="hidden">
+            <p>
+                ドドンガド～ン(裏)<br>
+                Rotter Tarmination(裏)<br>
+                !!!カオスタイム!!!<br>
+                †††カオスタイム the DARK†††<br>
+                !!!チルノのパーフェクトさんすうタイム!!!<br>
+                彁(裏)
+            </p>
+        </div>
     </div>
+    <div>
+        <p><br></p>
+    </div>
+
 
     <script>
 
@@ -190,7 +223,7 @@
             var RandomNum = 0;
             var TotalNum = 0;
             var dani1 = "", dani2 = "", dani3 = "";
-            
+
             var conditions = "";
             switch (selected) {
                 case "六段": DaniNum = 0; RandomNum = Math.floor(Math.random() * 3); break;
@@ -265,12 +298,14 @@
                 case 83: dani1 = "B"; dani2 = "B"; dani3 = "A"; conditions = "可の数6未満 , 不可の数3未満"; break;
                 case 84: dani1 = "A"; dani2 = "A"; dani3 = "A+"; conditions = "可の数7未満 , 不可の数3未満"; break;
                 case 85: dani1 = "A+"; dani2 = "A+"; dani3 = "S"; conditions = "可の数8未満 , 不可の数3未満"; break;
-                case 86: dani1 = "S+"; dani2 = "S+"; dani3 = "SS"; conditions = "可の数10未満 , 不可の数4未満"; break;
+                case 86: dani1 = "個人差S+"; dani2 = "個人差S+"; dani3 = "個人差S+"; conditions = "可の数10未満 , 不可の数4未満"; break;
                 case 87: dani1 = "SS"; dani2 = "SS"; dani3 = "SS"; conditions = "可の数20未満 , 不可の数7未満"; break;
             }
 
+            const DekinCheck = document.getElementById('Dekin');
+
             var displayArea4 = document.getElementById("displayArea4");
-            displayArea4.innerText = "";
+            displayArea4.innerText = "　";
 
             var selectedWords1 = SetWord(dani1);
             var selectedWords2 = SetWord(dani2);
@@ -282,7 +317,7 @@
                 return;
             }
 
-            
+
 
             var displayArea1 = document.getElementById("displayArea1");
             var displayArea2 = document.getElementById("displayArea2");
@@ -296,7 +331,7 @@
             var startTime = new Date().getTime();
 
             var interval = setInterval(function () {
-                if (new Date().getTime() - startTime > spinDuration && (displayArea1.innerText != displayArea2.innerText && displayArea2.innerText != displayArea3.innerText && displayArea3.innerText != displayArea1.innerText)) {
+                if (new Date().getTime() - startTime > spinDuration && DekinBool(DekinCheck.checked, displayArea1.innerText, displayArea2.innerText, displayArea3.innerText) && (displayArea1.innerText != displayArea2.innerText && displayArea2.innerText != displayArea3.innerText && displayArea3.innerText != displayArea1.innerText)) {
                     clearInterval(interval);
                     displayArea1.classList.remove("spinning");
                     displayArea2.classList.remove("spinning");
@@ -312,7 +347,7 @@
 
 
 
-            
+
         });
 
 
@@ -354,8 +389,23 @@
             else return words[input];
         }
 
+        function DekinBool(input, T1, T2, T3) {
+            var Dekin = ["ドドンガド～ン(裏)", "Rotter Tarmination(裏)", "!!!カオスタイム!!!", "†††カオスタイム the DARK†††", "!!!チルノのパーフェクトさんすうタイム!!!", "彁(裏)"];
+            if (input) return !(Dekin.includes(T1) || Dekin.includes(T2) || Dekin.includes(T3));
+            else return true;
 
+        }
 
+        document.getElementById('clickableText').addEventListener('click', function () {
+            var hiddenTextDiv = document.getElementById('hiddenText');
+            if (hiddenTextDiv.classList.contains('hidden')) {
+                hiddenTextDiv.classList.remove('hidden');
+                hiddenTextDiv.classList.add('visible');
+            } else {
+                hiddenTextDiv.classList.remove('visible');
+                hiddenTextDiv.classList.add('hidden');
+            }
+        });
 
     </script>
 </body>
